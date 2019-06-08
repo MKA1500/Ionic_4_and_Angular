@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+     <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
+    <title>Budget Planner</title>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Courses Rating</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Course Name</ion-label>
+            <ion-input type="text" id="inputCourseName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Rating (1-5)</ion-label>
+            <ion-input type="text" id="inputCourseRating"></ion-input>
+          </ion-item>
+          <div margin-vertical>
+            <ion-button
+              expand="full"
+              color="primary"
+              id="btnAdd">
+              Add <ion-icon name="add-circle" slot="end"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            <ion-list id="coursesList"></ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
+    </ion-app>
+    <script src="app.js"></script>
+  </body>
+</html>
