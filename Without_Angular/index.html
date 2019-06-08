@@ -20,17 +20,22 @@
           <ion-card-content>
             <ion-item>
               <ion-label position="floating">Expense</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" id="inputExpense"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Amount</ion-label>
-              <ion-input type="number"></ion-input>
+              <ion-input type="number" id="inputAmount"></ion-input>
             </ion-item>
             <div margin-vertical>
-              <ion-button expand="full" color="secondary">
+              <ion-button
+                expand="full"
+                color="secondary"
+                id="btnClear">
                 Clear <ion-icon name="trash" slot="end"></ion-icon>
               </ion-button>
-              <ion-button expand="full">
+              <ion-button
+                expand="full"
+                id="btnConfirm">
                 Add Expense <ion-icon name="add-circle" slot="end"></ion-icon>
               </ion-button>
             </div>
@@ -38,5 +43,6 @@
         </ion-card>
       </ion-content>
     </ion-app>
+    <script src="app.js"></script>
   </body>
 </html>
