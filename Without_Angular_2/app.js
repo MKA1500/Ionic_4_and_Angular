@@ -14,7 +14,11 @@ btnAdd.addEventListener('click', () => {
     enteredRating < 1 ||
     enteredRating > 5
   ) {
-    alertController.create({});
+    alertController.create({
+      header: 'Invalid Input',
+      message: 'Please enter a valid course name and rating',
+      buttons: ['OK']
+    }).then(alertElement => alertElement.present());
     return;
   }
 
