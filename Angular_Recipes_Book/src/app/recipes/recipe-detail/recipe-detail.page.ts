@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RecipesService } from '../recipes.service';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -7,8 +9,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./recipe-detail.page.scss'],
 })
 export class RecipeDetailPage implements OnInit {
+  loadedRecipe: Recipe;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private recipesService: RecipesService
+  ) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -16,6 +22,8 @@ export class RecipeDetailPage implements OnInit {
         // redirect
         return;
       }
+      const recipeId = paramMap.get('recipeId');
+      this.loadedRecipe = this.recipesService.getRecipe(recipeId);
     });
   }
 
