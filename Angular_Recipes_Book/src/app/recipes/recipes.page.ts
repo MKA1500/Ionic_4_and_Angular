@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { RecipesService } from './recipes.service';
 
@@ -7,13 +7,17 @@ import { RecipesService } from './recipes.service';
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
 })
-export class RecipesPage implements OnInit {
+export class RecipesPage implements OnInit, AfterContentInit {
   recipes: Recipe[];
 
   constructor(private recipesService: RecipesService) { }
 
   ngOnInit() {
     this.recipes = this.recipesService.getAllRecipes();
+  }
+
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit()');
   }
 
 }
